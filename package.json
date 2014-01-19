@@ -13,7 +13,7 @@
   },
   "description": "The personal website of Jackie and Levi Lindsey",
   "scripts": {
-    "start": "node init.js"
+    "start": "node jackieandlevi/init.js"
   },
   "repository": {
     "type": "git",

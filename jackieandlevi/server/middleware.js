@@ -1,7 +1,7 @@
 // This module exposes the setMiddleware function, which sets up all of the
 // middleware functionality for the server.
 
-var HOME_DIR = '../';
+var BASE_DIR = '../../';
 
 var stylus = require('stylus');
 
@@ -31,13 +31,13 @@ function setUpStaticFiles(apps, appsDir, homeDir, pageMissingDir, server, expres
   var mountPath, staticPath, i;
 
   // Set up the home files
-  staticPath = __dirname + '/' + HOME_DIR + homeDir + '/public';
+  staticPath = __dirname + '/' + BASE_DIR + homeDir + '/public';
   server.use(stylus.middleware(staticPath));
   server.use(express.static(staticPath));
   console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
 
   // Set up the pagemissing files
-  staticPath = __dirname + '/' + HOME_DIR + pageMissingDir + '/public';
+  staticPath = __dirname + '/' + BASE_DIR + pageMissingDir + '/public';
   server.use(stylus.middleware(staticPath));
   server.use(express.static(staticPath));
   console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
@@ -45,7 +45,7 @@ function setUpStaticFiles(apps, appsDir, homeDir, pageMissingDir, server, expres
   // Set up each of the apps' specific files
   apps.forEach(function(app) {
     mountPath = '/' + app;
-    staticPath = __dirname + '/' + HOME_DIR + appsDir + '/' + app + '/public';
+    staticPath = __dirname + '/' + BASE_DIR + appsDir + '/' + app + '/public';
     server.use(mountPath, stylus.middleware(staticPath));
     server.use(mountPath, express.static(staticPath));
     console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
