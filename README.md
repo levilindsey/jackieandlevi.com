@@ -11,3 +11,5 @@ Notes to self:
     - Create a routes.js script in this new directory. This module will need to
       contain the logic for routing requests to this app.
 
+[![Nodejitsu Deploy Status Badges](https://webhooks.nodejitsu.com/levisl176/JackieAndLevi.png)](https://webops.nodejitsu.com#levisl176/webhooks)
+
