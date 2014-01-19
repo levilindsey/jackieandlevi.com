@@ -48,6 +48,6 @@ function setUpStaticFiles(apps, appsDir, homeDir, pageMissingDir, server, expres
     staticPath = __dirname + '/' + HOME_DIR + appsDir + '/' + app + '/public';
     server.use(mountPath, stylus.middleware(staticPath));
     server.use(mountPath, express.static(staticPath));
-  console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
+    console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
   });
 }
