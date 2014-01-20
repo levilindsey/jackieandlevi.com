@@ -45,18 +45,14 @@ Thumbs.db
 ##############
 **/tests/
 
-
-
-**/misc/
-
 **/selenium/
-
-Makefile
 
 # Miscellaneous files needed in the repo, but not on the server #
 #################################################################
 
 **/misc/
+
+Makefile
 
 # nodejitsu limits the package size, so most music won't fit #
 ##############################################################
