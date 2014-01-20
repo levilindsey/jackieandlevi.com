@@ -53,6 +53,11 @@ Thumbs.db
 
 Makefile
 
+# Miscellaneous files needed in the repo, but not on the server #
+#################################################################
+
+**/misc/
+
 # nodejitsu limits the package size, so most music won't fit #
 ##############################################################
 all_of_us.m4a
