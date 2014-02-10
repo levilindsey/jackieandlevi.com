@@ -1,4 +1,4 @@
-JackieAndLevi
+jackieandlevi
 =============
 
 This is the personal web site of Jackie and Levi Lindsey.
