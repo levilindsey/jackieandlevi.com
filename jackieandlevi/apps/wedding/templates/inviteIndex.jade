@@ -1,4 +1,4 @@
-extends layout
+extends inviteLayout
 
 block content
 
@@ -30,14 +30,14 @@ block content
 
   .no_script_content
     | Hey!  This very pretty page was designed to be viewed with javascript enabled!  But if you'd really rather not deal with javascript, you can view the 
-    a(href='#{BASE_DIR}/noscript')
+    a(href='#{BASE_DIR}/inviteNoscript')
       | basic information here
     | .
 
   .ie_user_content
     | I&apos;m sorry, but 
     a(href='http://www.hipwebdesign.com/blog/why-you-should-stop-using-internet-explorer/', target='_blank')
-      | Internet Explorer is a pretty awful browser
+      | Internet Explorer is (was) a pretty awful browser
     | , and I chose to not support it on this page.  IE is not standards compliant, which means that professional web developers have to write everything they do twice&mdash;once for IE and once for everyone else.  IE has numerous security issues and has countless bugs.  IE consumes a good deal more of your computer's processing power than other browsers and still runs significantly more slowly.
     br
     br
@@ -48,7 +48,7 @@ block content
     a(href='https://www.google.com/intl/en/chrome/browser/', target='_blank')
       | Chrome
     | , or Safari. Otherwise, you can view the 
-    a(href='#{BASE_DIR}/noscript')
+    a(href='#{BASE_DIR}/inviteNoscript')
       | basic content of the site here
     | .
 

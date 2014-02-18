@@ -17,7 +17,7 @@ module.exports = function attachHandlers(server, appPath) {
   server.get(LEVI_ROUTE_REGEX, function(req, res, next) {
     handleRequest(req, res, next, 'levi');
   });
-}
+};
 
 // Handles a request for this app.
 function handleRequest(req, res, next, person) {
