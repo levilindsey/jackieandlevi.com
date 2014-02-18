@@ -14,4 +14,8 @@ html(lang='en')
     link(href='#{BASE_DIR}/stylesheets/wedding.css#{currentVersion}', type='text/css', rel='stylesheet')
     link(href='#{BASE_DIR}/images/icon.ico#{currentVersion}', type='image/gif', rel='shortcut icon')
   body
+
+    a#ribbon(href='/wedding/photos')
+      img(src='#{BASE_DIR}/images/wedding_photos_ribbon.png', alt='Check out Jackie and Levi\'s wedding photos!')
+
     block content
