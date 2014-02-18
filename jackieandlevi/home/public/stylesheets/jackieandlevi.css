@@ -77,6 +77,15 @@ h1 {
   font-size: 14pt;
   text-align: center;
 }
+#ribbon {
+  position: absolute;
+  top: 0px;
+  left: 80%;
+  width: 140px;
+}
+#ribbon img {
+  width: 100%;
+}
 /* ---------- The individual Venn items ---------- */
 #jackie {
   left: 100px;

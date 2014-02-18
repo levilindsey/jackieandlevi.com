@@ -265,3 +265,12 @@ table {
   font-size: 13pt;
   font-weight: bold;
 }
+#ribbon {
+  position: absolute;
+  top: 0px;
+  left: 65%;
+  width: 140px;
+}
+#ribbon img {
+  width: 100%;
+}
