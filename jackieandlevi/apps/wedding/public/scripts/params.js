@@ -25,6 +25,8 @@
   params.PHOTO_METADATA = moduleParams;
 
   moduleParams.URL = 'http://ukulelefury.com/weddingphotos/metadata.json';
+  moduleParams.RETRY_TIMEOUT_DELAY = 4000;
+  moduleParams.MAX_DOWNLOAD_ATTEMPT_COUNT = 3;
 
   // --- Photo lightbox parameters --- //
 
@@ -164,7 +166,8 @@
 
   moduleParams.BAD_BROWSER_MESSAGE =
       ':( Sorry, but some of the fancy features of this app may not work on your browser. You should really upgrade to a newer version.';
-  moduleParams.METADATA_ERROR_MESSAGE = ':( Unable to download or parse the metadata for the images.';
+  moduleParams.METADATA_ERROR_MESSAGE =
+      ':( Unable to download or parse the metadata for the images. Please check your Internet connection and try again.';
 
   // --- Miscellaneous parameters --- //
 
