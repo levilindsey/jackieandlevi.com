@@ -12,7 +12,7 @@ exports.setMiddleware = function setMiddleware(apps, appsDir, homeDir, pageMissi
   server.set('view engine', 'jade');
 
   server.use(express.logger('dev'));
-  server.use(express.favicon());// TODO: what is this? need favicons to change for each app.
+  server.use(express.favicon());
   server.use(express.json());
   server.use(express.urlencoded());
   server.use(express.methodOverride());
