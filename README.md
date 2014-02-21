@@ -1,20 +1,15 @@
-jackieandlevi
-=============
+# jackieandlevi
 
-This is the personal web site of Jackie and Levi Lindsey.
+#### The personal web site of Jackie and Levi Lindsey
 
--------------
+_See the site at www.jackieandlevi.com!_
 
-Notes to self:
-- When adding a new app to this site:
-    - Create a new directory for it within jackieandlevi/apps/.
-    - Create a routes.js script in this new directory. This module will need to
-      contain the logic for routing requests to this app.
+This site is where Levi tinkers with many different web app ideas. It's basically his playground. And his portfolio.
 
+The combined technology stack for this site and its many sub-projects includes: HTML5, CSS3, NodeJS, Express, MongoDB, AngularJS, Stylus, Jade, Mocha, GitHub, CodeShip, NodeJitsu.
 
-The technology stack for this web app includes: HTML5, CSS3, NodeJS, Express, MongoDB, AngularJS, Stylus, Jade, Mocha, GitHub, CodeShip, NodeJitsu.
-
--------------
+======
 
 [![Codeship Status for levisl176/JackieAndLevi](https://www.codeship.io/projects/f7eaaf70-63a1-0131-6568-124350f7f3f0/status?branch=master)](https://www.codeship.io/projects/12381)
 
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=levisl176&url=github.com/levisl176/jackieandlevi&title=jackieandlevi&language=javascript&tags=github&category=software)
