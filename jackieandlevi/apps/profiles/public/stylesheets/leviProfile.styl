@@ -7,3 +7,73 @@ body a:hover {
 #mainArea {
 	border-top-color: #9ce1db;
 }
+
+#banner #ribbon {
+  left: 20px;
+}
+
+/* --- Fork me on GitHub ribbon --- */
+/* (borrowed from http://codepo8.github.io/css-fork-on-github-ribbon/) */
+
+#forkMeOnGitHubRibbon a {
+  background: #333;
+  color: #ddd;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 40px;
+  font-size: 1rem;
+  line-height: 2rem;
+  position: relative;
+  transition: 0.1s;
+}
+
+#forkMeOnGitHubRibbon a:hover {
+  background: #666;
+  color: #fff;
+}
+
+#forkMeOnGitHubRibbon a:active {
+  background: #111;
+  color: #999;
+}
+
+#forkMeOnGitHubRibbon a::before,
+#forkMeOnGitHubRibbon a::after {
+  content: '';
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+#forkMeOnGitHubRibbon a::after {
+  bottom: 2px;
+  top: auto;
+}
+
+@media screen and (min-width:800px) {
+  #forkMeOnGitHubRibbon {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 200px;
+    overflow: hidden;
+    height: 200px;
+  }
+
+  #forkMeOnGitHubRibbon a {
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.7);
+  }
+}
