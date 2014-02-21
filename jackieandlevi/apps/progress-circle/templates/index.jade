@@ -1,0 +1,19 @@
+- var BASE_DIR = '/progress-circle';
+
+doctype html
+html(lang='en')
+  head
+    title
+      | Progress Circle
+    meta(charset='utf-8')
+    meta(name='description', content='A progress circle!')
+    link(rel='stylesheet', href='#{BASE_DIR}/stylesheets/index.css')
+    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico')
+  body
+    script(src='#{BASE_DIR}/scripts/params.js')
+    script(src='#{BASE_DIR}/scripts/util.js')
+    script(src='#{BASE_DIR}/scripts/log.js')
+    script(src='#{BASE_DIR}/scripts/animate.js')
+    script(src='#{BASE_DIR}/scripts/progressCircle.js')
+    script(src='#{BASE_DIR}/scripts/index.js')
+    script(src='/scripts/googleanalytics.js')

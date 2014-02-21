@@ -388,6 +388,7 @@
       // directions table
       var helpButton = document.getElementById('helpButton');
       if (this === helpButton && _selectedChapterIndex <= 0) {
+        var infoArea = document.getElementById('infoArea');
         var infoAreaRect = utils.standardizeClientRect(infoArea);
         window.scrollTo(0, infoAreaRect.top);
       }

@@ -15,7 +15,7 @@
    id="svg3192"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="ribbon.svg"
+   sodipodi:docname="ribbons.svg"
    inkscape:export-filename="E:\Repositories\jackieandlevi\misc\ribbon.png"
    inkscape:export-xdpi="90.001617"
    inkscape:export-ydpi="90.001617">
@@ -161,6 +161,18 @@
          offset="1"
          id="stop3992-0-1" />
     </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3860">
+      <rect
+         style="fill:#32a0f8;fill-opacity:1;stroke:none"
+         id="rect3862"
+         width="380.76868"
+         height="380.76868"
+         x="-406.96637"
+         y="51.555923"
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -169,17 +181,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="184.05262"
-     inkscape:cy="-19.28312"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="-154.26385"
+     inkscape:cy="-371.23151"
      inkscape:current-layer="g3836-8"
      showgrid="true"
      inkscape:document-units="px"
      inkscape:grid-bbox="true"
-     inkscape:window-width="2560"
-     inkscape:window-height="1418"
-     inkscape:window-x="2552"
-     inkscape:window-y="-8"
+     inkscape:window-width="2511"
+     inkscape:window-height="1416"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3197">
@@ -189,7 +201,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -305,6 +317,75 @@
            x="22.775002"
            sodipodi:role="line"
            id="tspan3890-2">wedding photos!</tspan></text>
+      <rect
+         style="fill:#32a0f8;fill-opacity:1;stroke:none"
+         id="rect3813"
+         width="380.76868"
+         height="380.76868"
+         x="-444.45236"
+         y="272.02728"
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
+      <g
+         id="g3805"
+         transform="translate(129.3902,182.4034)">
+        <rect
+           y="154.34444"
+           x="-154.60309"
+           height="30.759146"
+           width="345.06812"
+           id="rect3797"
+           style="fill:#303030;fill-opacity:1;stroke:none" />
+        <rect
+           y="157.16954"
+           x="-220.01379"
+           height="25.816042"
+           width="475.88953"
+           id="rect3799"
+           style="fill:none;stroke:#e2e2e2;stroke-width:0.99299997;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.986, 0.993;stroke-dashoffset:0" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3801"
+           y="176.9288"
+           x="-70.17054"
+           style="font-size:18.07210541px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#e2e2e2;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+             y="176.9288"
+             x="-70.17054"
+             id="tspan3803"
+             sodipodi:role="line">Fork me on GitHub!</tspan></text>
+      </g>
+      <g
+         id="g3805-1"
+         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,-181.69519,56.656727)"
+         clip-path="url(#clipPath3860)">
+        <rect
+           y="154.34444"
+           x="-154.60309"
+           height="30.759146"
+           width="345.06812"
+           id="rect3797-4"
+           style="fill:#303030;fill-opacity:1;stroke:none" />
+        <rect
+           y="157.16954"
+           x="-220.01379"
+           height="25.816042"
+           width="475.88953"
+           id="rect3799-9"
+           style="fill:none;stroke:#e2e2e2;stroke-width:0.99299997;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.986, 0.993;stroke-dashoffset:0" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3801-7"
+           y="176.9288"
+           x="-70.17054"
+           style="font-size:18.07210541px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#e2e2e2;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+             y="176.9288"
+             x="-70.17054"
+             id="tspan3803-8"
+             sodipodi:role="line">Fork me on GitHub!</tspan></text>
+      </g>
     </g>
     <path
        inkscape:connector-curvature="0"
