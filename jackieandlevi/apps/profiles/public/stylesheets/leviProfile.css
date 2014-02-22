@@ -179,23 +179,21 @@ body a:hover {
   bottom: 2px;
   top: auto;
 }
-@media screen and (min-width:800px) {
-  #forkMeOnGitHubRibbon {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
-    width: 200px;
-    overflow: hidden;
-    height: 200px;
-  }
-  #forkMeOnGitHubRibbon a {
-    width: 200px;
-    position: absolute;
-    top: 60px;
-    right: -60px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.7);
-  }
+#forkMeOnGitHubRibbon {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 200px;
+  overflow: hidden;
+  height: 200px;
+}
+#forkMeOnGitHubRibbon a {
+  width: 200px;
+  position: absolute;
+  top: 60px;
+  right: -60px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.7);
 }
