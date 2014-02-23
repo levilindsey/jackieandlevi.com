@@ -1,3 +1,4 @@
+- var currentVersion = '?v=1.0.1';
 - var BASE_DIR = '/profiles';
 
 doctype html
@@ -7,10 +8,9 @@ html(lang='en')
 
     meta(charset='utf-8')
     meta(name='description', content='Jackie and Levi Lindsey&apos;s personal website')
-    meta(name='viewport', content='width=device-width')
 
-    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico')
-    link(rel='stylesheet', href='#{BASE_DIR}/stylesheets/#{lowerName}Profile.css')
+    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico#{currentVersion}')
+    link(rel='stylesheet', href='#{BASE_DIR}/stylesheets/#{lowerName}Profile.css#{currentVersion}')
   body
     span#forkMeOnGitHubRibbon
       a(href='https://github.com/levisl176', target='_blank')
@@ -19,12 +19,12 @@ html(lang='en')
     #contentColumn
       header#banner
         #titleCircle
-          img(src='#{BASE_DIR}/images/#{lowerName}_circle.png', alt='Circle')
+          img(src='#{BASE_DIR}/images/#{lowerName}_circle.png#{currentVersion}', alt='Circle')
           h1
             | #{upperName}<br>Lindsey
 
         a#ribbon(href='#{ribbonLink}')
-          img(src='#{BASE_DIR}/images/#{lowerName}_ribbon.png', alt='#{ribbonAlt}')
+          img(src='#{BASE_DIR}/images/#{lowerName}_ribbon.png#{currentVersion}', alt='#{ribbonAlt}')
 
         nav#internalLinks
           - var profilePages = [{link: 'about', name: 'About'}, {link: 'projects', name: 'Projects'}, {link: 'resume', name: 'Resume'}, {link: 'follow', name: 'Follow Me'}, {link: '../', name: 'J & L Home'}];

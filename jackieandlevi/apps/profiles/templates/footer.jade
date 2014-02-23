@@ -1,10 +1,11 @@
 footer
   | Site last updated: 
-  time(datetime='2014-2-22', pubdate)
-    | 2/22/2014
+  time(datetime='2014-2-23', pubdate)
+    | 2/23/2014
 
 script(src='/scripts/googleanalytics.js')
-script(src='#{BASE_DIR}/scripts/params.js')
-script(src='#{BASE_DIR}/scripts/log.js')
-script(src='#{BASE_DIR}/scripts/util.js')
-script(src='#{BASE_DIR}/scripts/index.js')
+
+script(src='#{BASE_DIR}/scripts/params.js#{currentVersion}')
+script(src='#{BASE_DIR}/scripts/log.js#{currentVersion}')
+script(src='#{BASE_DIR}/scripts/util.js#{currentVersion}')
+script(src='#{BASE_DIR}/scripts/index.js#{currentVersion}')

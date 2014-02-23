@@ -1,3 +1,4 @@
+- var currentVersion = '?v=1.0.1';
 - var BASE_DIR = '/chess';
 
 doctype html
@@ -7,8 +8,8 @@ html(lang='en')
       | Chess
     meta(charset='utf-8')
     meta(name='description', content='A two-player game of chess')
-    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico')
-    link(rel='stylesheet', href='#{BASE_DIR}/stylesheets/chess.css')
+    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico#{currentVersion}')
+    link(rel='stylesheet', href='#{BASE_DIR}/stylesheets/chess.css#{currentVersion}')
   body
     div#mainArea
       p#turnDisplay
@@ -33,10 +34,10 @@ html(lang='en')
       #promotion
         h2
           | Select how to promote your pawn
-        img(id='promoteToQueen', src='#{BASE_DIR}/images/whitequeen.png', alt='Promote to queen')
-        img(id='promoteToRook', src='#{BASE_DIR}/images/whiterook.png', alt='Promote to rook')
-        img(id='promoteToKnight', src='#{BASE_DIR}/images/whiteknight.png', alt='Promote to knight')
-        img(id='promoteToBishop', src='#{BASE_DIR}/images/whitebishop.png', alt='Promote to bishop')
+        img(id='promoteToQueen', src='#{BASE_DIR}/images/whitequeen.png#{currentVersion}', alt='Promote to queen')
+        img(id='promoteToRook', src='#{BASE_DIR}/images/whiterook.png#{currentVersion}', alt='Promote to rook')
+        img(id='promoteToKnight', src='#{BASE_DIR}/images/whiteknight.png#{currentVersion}', alt='Promote to knight')
+        img(id='promoteToBishop', src='#{BASE_DIR}/images/whitebishop.png#{currentVersion}', alt='Promote to bishop')
 
       h2
         | Directions
@@ -51,8 +52,8 @@ html(lang='en')
           | Note:
         | In order to castle, select the king as the piece to move.
 
-    script(src='#{BASE_DIR}/scripts/chessboard.js')
-    script(src='#{BASE_DIR}/scripts/chesspieces.js')
-    script(src='#{BASE_DIR}/scripts/chessgame.js')
-    script(src='#{BASE_DIR}/scripts/main.js')
-    script(src='/scripts/googleanalytics.js')
+    script(src='#{BASE_DIR}/scripts/chessboard.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/chesspieces.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/chessgame.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/main.js#{currentVersion}')
+    script(src='/scripts/googleanalytics.js#{currentVersion}')

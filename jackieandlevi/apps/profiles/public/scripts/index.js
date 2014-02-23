@@ -33,7 +33,7 @@
   function reset() {
     // Hide Levi's GitHub ribbon on small screens
     if (window.location.pathname.indexOf('levi') >= 0) {
-      if (util.getViewportSize().w < 800) {
+      if (util.getViewportSize().w < 1000) {
         document.getElementById('forkMeOnGitHubRibbon').style.display = 'none';
       }
     }

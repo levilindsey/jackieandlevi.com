@@ -144,6 +144,11 @@ body a:hover {
 /* --- Fork me on GitHub ribbon --- */
 /* (borrowed from http://codepo8.github.io/css-fork-on-github-ribbon/) */
 #forkMeOnGitHubRibbon a {
+  position: absolute;
+  top: 60px;
+  right: -60px;
+  width: 200px;
+  z-index: 10;
   background: #333;
   color: #ddd;
   text-decoration: none;
@@ -153,8 +158,10 @@ body a:hover {
   padding: 5px 40px;
   font-size: 1rem;
   line-height: 2rem;
-  position: relative;
   transition: 0.1s;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.7);
 }
 #forkMeOnGitHubRibbon a:hover {
   background: #666;
@@ -187,13 +194,4 @@ body a:hover {
   width: 200px;
   overflow: hidden;
   height: 200px;
-}
-#forkMeOnGitHubRibbon a {
-  width: 200px;
-  position: absolute;
-  top: 60px;
-  right: -60px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.7);
 }

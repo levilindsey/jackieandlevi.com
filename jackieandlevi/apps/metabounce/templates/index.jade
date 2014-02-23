@@ -1,3 +1,4 @@
+- var currentVersion = '?v=1.0.1';
 - var BASE_DIR = '/metabounce';
 
 doctype html
@@ -7,13 +8,13 @@ html(lang='en')
       | MetaBounce
     meta(charset='utf-8')
     meta(name='description', content='Fun with JavaScript...and bouncing')
-    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico')
+    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico#{currentVersion}')
   body
-    script(src='#{BASE_DIR}/scripts/params.js')
-    script(src='#{BASE_DIR}/scripts/constants.js')
-    script(src='#{BASE_DIR}/scripts/util.js')
-    script(src='#{BASE_DIR}/scripts/colorShifter.js')
-    script(src='#{BASE_DIR}/scripts/touchAnimator.js')
-    script(src='#{BASE_DIR}/scripts/ballHandler.js')
-    script(src='#{BASE_DIR}/scripts/metaBounce.js')
+    script(src='#{BASE_DIR}/scripts/params.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/constants.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/util.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/colorShifter.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/touchAnimator.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/ballHandler.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/metaBounce.js#{currentVersion}')
     script(src='/scripts/googleanalytics.js')

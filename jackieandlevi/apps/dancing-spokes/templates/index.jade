@@ -1,3 +1,4 @@
+- var currentVersion = '?v=1.0.1';
 - var BASE_DIR = '/dancing-spokes';
 
 doctype html
@@ -7,7 +8,7 @@ html(lang='en')
       | Dancing Spokes
     meta(charset='utf-8')
     meta(name='description', content='Dancing sticks of light!')
-    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico')
+    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico#{currentVersion}')
   body
-    script(src='#{BASE_DIR}/scripts/dancingSpokes.js')
+    script(src='#{BASE_DIR}/scripts/dancingSpokes.js#{currentVersion}')
     script(src='/scripts/googleanalytics.js')

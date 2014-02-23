@@ -1,3 +1,5 @@
+- var currentVersion = '?v=1.0.1';
+
 doctype html
 html(lang='en')
   head
@@ -8,10 +10,10 @@ html(lang='en')
     meta(name='description', content='Jackie and Levi Lindsey&apos;s personal website')
     meta(name='viewport', content='width=device-width')
 
-    link(rel='shortcut icon', href='/images/favicon.ico')
-    link(rel='stylesheet', href='/stylesheets/pageMissing.css')
+    link(rel='shortcut icon', href='/images/favicon.ico#{currentVersion}')
+    link(rel='stylesheet', href='/stylesheets/pageMissing.css#{currentVersion}')
   body
-    img(src='/images/maya.jpg', alt='A cat')
+    img(src='/images/maya.jpg#{currentVersion}', alt='A cat')
     h1
       | Page Missing
     p
