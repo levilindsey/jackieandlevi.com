@@ -6,7 +6,7 @@ _See the site at www.jackieandlevi.com!_
 
 This site is where Levi tinkers with many different web app ideas. It's basically his playground. And his portfolio.
 
-The combined technology stack for this site and its many sub-projects includes: HTML5, CSS3, NodeJS, Express, MongoDB, AngularJS, Stylus, Jade, Mocha, GitHub, CodeShip, NodeJitsu.
+The combined technology stack for this site and its many sub-projects includes: HTML5/CSS3/Javascript, Node.js, Express, Socket.IO, Stylus, Jade, Mocha, GitHub, NodeJitsu.
 
 ======
 
