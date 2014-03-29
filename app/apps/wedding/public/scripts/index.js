@@ -58,9 +58,9 @@
     body = document.getElementsByTagName('body')[0];
     photoGridCollection = new PhotoGridCollection(body);
 
+    cacheSpriteSheet();
     photoMetadata.downloadAndParsePhotoMetadata(params.PHOTO_METADATA.URL,
         onParsePhotoMetadataSuccess, onParsePhotoMetadataError);
-    cacheSpriteSheet();
     checkBrowserCompatibility();
   }
 

@@ -26,28 +26,29 @@ exports.setMiddleware = function setMiddleware(apps, appsDir, homeDir, pageMissi
   } 
 };
 
-// Set up the static files
+// Set up the static files.
 function setUpStaticFiles(apps, appsDir, homeDir, pageMissingDir, server, express) {
   var mountPath, staticPath, i;
 
   // Set up the home files
   staticPath = __dirname + '/' + BASE_DIR + homeDir + '/public';
-  server.use(stylus.middleware(staticPath));
-  server.use(express.static(staticPath));
-  console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
+  setUpStaticFilesForPath('/', staticPath, server, express);
 
   // Set up the pagemissing files
   staticPath = __dirname + '/' + BASE_DIR + pageMissingDir + '/public';
-  server.use(stylus.middleware(staticPath));
-  server.use(express.static(staticPath));
-  console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
+  setUpStaticFilesForPath('/', staticPath, server, express);
 
   // Set up each of the apps' specific files
   apps.forEach(function(app) {
     mountPath = '/' + app;
     staticPath = __dirname + '/' + BASE_DIR + appsDir + '/' + app + '/public';
-    server.use(mountPath, stylus.middleware(staticPath));
-    server.use(mountPath, express.static(staticPath));
-    console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
+    setUpStaticFilesForPath(mountPath, staticPath, server, express);
   });
 }
+
+function setUpStaticFilesForPath(mountPath, staticPath, server, express) {
+  server.use(mountPath, stylus.middleware(staticPath));
+  server.use(mountPath, express.static(staticPath));
+  console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
+}
+

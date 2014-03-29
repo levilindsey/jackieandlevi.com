@@ -41,10 +41,21 @@ Thumbs.db
 #####################
 **/node_modules/
 
-
-
-**/selenium/
-
 # misc              #
 #####################
+**/selenium/
+
 .idea/
+
+lib-cov
+*.seed
+*.csv
+*.dat
+*.out
+*.pid
+
+pids
+logs
+results
+npm-debug.log
+

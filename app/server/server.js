@@ -1,7 +1,7 @@
 // This module exposes the createServer function, which creates the server 
 // instance, sets up the middleware, and attaches the route handlers.
 
-var BASE_DIR = 'jackieandlevi';
+var BASE_DIR = 'app';
 var APPS_DIR = BASE_DIR + '/apps';
 var HOME_DIR = BASE_DIR + '/home';
 var PAGE_MISSING_DIR = BASE_DIR + '/pagemissing';
