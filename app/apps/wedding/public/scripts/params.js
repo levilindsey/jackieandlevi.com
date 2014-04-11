@@ -24,7 +24,7 @@
   moduleParams = {};
   params.PHOTO_METADATA = moduleParams;
 
-  moduleParams.URL = 'http://ukulelefury.com/weddingphotos/metadata.json';
+  moduleParams.URL = 'https://s3-us-west-2.amazonaws.com/jackieandlevi-wedding-photos/metadata.json';
   moduleParams.RETRY_TIMEOUT_DELAY = 5000;
   moduleParams.MAX_DOWNLOAD_ATTEMPT_COUNT = 3;
 
