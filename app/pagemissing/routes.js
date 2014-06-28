@@ -11,7 +11,7 @@ module.exports = function attachHandlers(server, appPath) {
   templatePath = appPath + TEMPLATE_FILE;
 
   server.all(ROUTE_REGEX, handleRequest);
-}
+};
 
 // Handles a request for this app.
 function handleRequest(req, res, next) {
