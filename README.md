@@ -2,7 +2,7 @@
 
 #### The personal web site of Jackie and Levi Lindsey
 
-_See the site at www.jackieandlevi.com!_
+_See the app running at [www.jackieandlevi.com](http://www.jackieandlevi.com)!_
 
 This site is where Levi tinkers with many different web app ideas. It's basically his playground. And his portfolio.
 
