@@ -39,23 +39,23 @@ Thumbs.db
 
 # node dependencies #
 #####################
-**/node_modules/
+node_modules/
 
 # test files #
 ##############
-**/tests/
+tests/
 
-**/selenium/
+selenium/
 
 # Miscellaneous files needed in the repo, but not on the server #
 #################################################################
 
-**/misc/
+misc/
 
 Makefile
 
-**/.idea/
-**/.git/
+.idea/
+.git/
 .gitignore
 
 # nodejitsu limits the package size, so most music won't fit #
