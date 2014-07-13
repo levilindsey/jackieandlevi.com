@@ -1,0 +1,69 @@
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  height: 1000px;
+  margin: 0; padding: 0;
+  background: #343534;
+  color: #d4d5d3;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  width: 100%;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+a { color: #80c050; text-decoration: none; }
+a:hover { color: #a0ea70; text-decoration: underline; }
+a:active { color: #509020; }
+a:visited { color: #90c080; }
+
+#main-area {
+  width: 800px;
+  margin: 70px auto;
+}
+
+#buttons {
+  float: left;
+  width: 120px;
+  padding-right: 80px;
+}
+
+#recipe {
+  float: left;
+  width: 600px;
+}
+
+#buttons>button {
+  display: block;
+  margin: 0 0 6px;
+  width: 100%;
+  height: 20px;
+  padding: 1px 6px;
+  border-width: 1px 2px;
+  font-size: 14px;
+}
+
+.waiting-to-animate {
+  overflow: visible;
+  opacity: 0;
+}
+
+.is-animating {
+  overflow: visible;
+  opacity: 1;
+}
+
+.done-animating {
+  opacity: 1;
+}

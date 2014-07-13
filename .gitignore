@@ -39,11 +39,11 @@ Thumbs.db
 
 # node dependencies #
 #####################
-**/node_modules/
+node_modules/
 
-# misc              #
-#####################
-**/selenium/
+# misc #
+########
+selenium/
 
 .idea/
 
@@ -58,4 +58,8 @@ pids
 logs
 results
 npm-debug.log
+
+*.pem
+
+aws_config.json
 
