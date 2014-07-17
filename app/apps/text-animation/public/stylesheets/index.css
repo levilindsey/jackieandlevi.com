@@ -7,8 +7,8 @@ html {
 body {
   height: 1000px;
   margin: 0; padding: 0;
-  background: #343534;
-  color: #d4d5d3;
+  background: #e8e8e8;
+  color: #343534;
   font-size: 18px;
   font-family: sans-serif;
 }
@@ -23,6 +23,13 @@ h2 {
   font-size: 26px;
 }
 
+h3 {
+  margin: 0 0 6px 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: normal;
+}
+
 a { color: #80c050; text-decoration: none; }
 a:hover { color: #a0ea70; text-decoration: underline; }
 a:active { color: #509020; }
@@ -35,8 +42,8 @@ a:visited { color: #90c080; }
 
 #buttons {
   float: left;
-  width: 120px;
-  padding-right: 80px;
+  width: 130px;
+  padding-right: 70px;
 }
 
 #recipe {
