@@ -1,0 +1,20 @@
+- var currentVersion = '?v=1.0.1';
+- var BASE_DIR = '/metabounce';
+
+doctype html
+html(lang='en')
+  head
+    title
+      | MetaBounce
+    meta(charset='utf-8')
+    meta(name='description', content='Fun with JavaScript...and bouncing')
+    link(rel='shortcut icon', href='#{BASE_DIR}/images/favicon.ico#{currentVersion}')
+  body
+    script(src='#{BASE_DIR}/scripts/params.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/constants.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/util.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/colorShifter.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/touchAnimator.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/ballHandler.js#{currentVersion}')
+    script(src='#{BASE_DIR}/scripts/metaBounce.js#{currentVersion}')
+    script(src='/home/scripts/googleanalytics.js')
