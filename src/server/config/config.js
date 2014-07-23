@@ -26,6 +26,7 @@ config.app.srcPath = config.app.projectRootPath + '/src';
 config.app.appsPath = config.app.srcPath + '/apps';
 config.app.homePath = config.app.appsPath + '/home';
 config.app.pageMissingPath = config.app.appsPath + '/page-missing';
+config.app.bowerComponentsPath = config.app.projectRootPath + '/bower_components';
 config.app.faviconPath = config.app.homePath + '/public/images/favicon.ico';
 
 config.app.apps = fs.readdirSync(config.app.appsPath);
