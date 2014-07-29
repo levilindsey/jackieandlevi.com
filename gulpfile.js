@@ -21,6 +21,7 @@ var projectName = 'jackieandlevi',
 
 gulp.task('scripts', function () {
   return gulp.src(scriptsSrcPath)
+      .pipe(plugins.plumber())
       .pipe(plugins.concat(projectName + '.js'))
       .pipe(gulp.dest(scriptsDistPath))
       .pipe(plugins.filesize())
@@ -28,11 +29,13 @@ gulp.task('scripts', function () {
       .pipe(plugins.uglify())
       .pipe(gulp.dest(scriptsDistPath))
       .pipe(plugins.filesize())
-      .pipe(plugins.notify({message: 'scripts task complete'}));
+      .pipe(plugins.notify({message: 'scripts task complete'}))
+      .pipe(plugins.livereload());
 });
 
 gulp.task('styles', function () {
   return gulp.src(stylesMainSrcPath)
+      .pipe(plugins.plumber())
       // TODO: go back to rubySass if it isn't broken anymore...
       //.pipe(plugins.rubySass({style: 'expanded', sourcemap: true, sourcemapPath: sourcemapPath}))
       .pipe(plugins.sass({sourceComments: 'map'}))
@@ -41,14 +44,17 @@ gulp.task('styles', function () {
       .pipe(plugins.rename({suffix: '.min'}))
       .pipe(plugins.minifyCss())
       .pipe(gulp.dest(stylesDistPath))
-      .pipe(plugins.notify({message: 'styles task complete'}));
+      .pipe(plugins.notify({message: 'styles task complete'}))
+      .pipe(plugins.livereload());
 });
 
 gulp.task('images', function () {
   return gulp.src(imagesSrcPath)
+      .pipe(plugins.plumber())
       .pipe(plugins.cache(plugins.imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
       .pipe(gulp.dest(imagesDistPath))
-      .pipe(plugins.notify({message: 'images task complete'}));
+      .pipe(plugins.notify({message: 'images task complete'}))
+      .pipe(plugins.livereload());
 });
 
 gulp.task('tests-once', ['server-tests-once', 'front-end-tests-once']);
@@ -80,14 +86,10 @@ gulp.task('clean', function () {
 });
 
 gulp.task('default', ['clean'], function () {
-  gulp.start('demon');//, 'images');// TODO: add image compression for future, image-dependent projects
+  gulp.start('server', 'scripts', 'styles', 'tests-once', 'watch');//, 'images');// TODO: add image compression for future, image-dependent projects
 });
 
 gulp.task('watch', ['front-end-tests-tdd'], function () {
-  plugins.livereload.listen();
-
-  gulp.watch(distPath + '/**').on('change', plugins.livereload.changed);
-
   gulp.watch(stylesGlobSrcPath, ['styles']);
 
   gulp.watch(scriptsSrcPath, ['scripts']);
@@ -97,15 +99,6 @@ gulp.task('watch', ['front-end-tests-tdd'], function () {
   gulp.watch(serverTestsSrcPath, ['server-tests-once']);
 });
 
-gulp.task('demon', function () {
-  plugins.nodemon({
-    script: 'src/main.js',
-    ext: 'js json html css jade scss',
-    delay: 1.5
-  })
-      .on('start', ['watch'])
-      .on('change', ['watch'])
-      .on('restart', function () {
-        console.log('Server restarted');
-      });
+gulp.task('server', function () {
+  plugins.nodemon({script: 'src/main.js'});
 });
