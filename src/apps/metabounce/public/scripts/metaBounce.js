@@ -17,10 +17,14 @@
   window.addEventListener('load', init, false);
 
   function init() {
+    setRandomParameterSet();
+
     var currentTime = Date.now();
 
     createMiscElements();
     addEventListeners();
+
+    adjustBallCountForViewportSize();
 
     colorShifter.init(svgDefs, currentTime);
     ballHandler.init(svg, svgDefs, viewport, currentTime);
@@ -32,7 +36,8 @@
     previousTime = currentTime;
     util.myRequestAnimationFrame(animationLoop);
 
-    handleAutoTouches();
+    handleInitialAutoTouches();
+    handleRecurringAutoTouches();
   }
 
   function createMiscElements() {
@@ -93,7 +98,7 @@
     }, false);
   }
 
-  function handleAutoTouches() {
+  function handleInitialAutoTouches() {
     var index = 0;
 
     PARAMS.AUTO_TOUCHES.forEach(function(autoTouch) {
@@ -106,6 +111,17 @@
         x: autoTouch.POS_RATIO.X * viewport.width,
         y: autoTouch.POS_RATIO.Y * viewport.height
       });
+    }
+  }
+
+  function handleRecurringAutoTouches() {
+    if (!isNaN(PARAMS.RECURRING_AUTO_TOUCH_PERIOD)) {
+      setInterval(function () {
+        ballHandler.handleTouch({
+          x: Math.random() * viewport.width,
+          y: Math.random() * viewport.height
+        });
+      }, PARAMS.RECURRING_AUTO_TOUCH_PERIOD);
     }
   }
 
@@ -130,6 +146,34 @@
       previousTime = currentTime;
       util.myRequestAnimationFrame(animationLoop);
     }
+  }
+
+  function setRandomParameterSet() {
+    var parameterOptions, selectedSetName;
+
+    parameterOptions = [
+        'BUBBLE',
+//        'GRAVITY',
+        'GROWTH',
+//        'DEPENDENT',
+//        'INDEPENDENT',
+        'METABUBBLE',
+//        'RESISTANCE',
+        'SQUISH',
+        'SWARM'
+//        'TOUCH_OF_DEATH'
+    ];
+
+    selectedSetName = parameterOptions[parseInt(Math.random() * parameterOptions.length)];
+
+    window.PARAMS = window['PARAMS_' + selectedSetName];
+
+    initializeDependentConstants();
+  }
+
+  function adjustBallCountForViewportSize() {
+    PARAMS.BASE.BALL_COUNT =
+        parseInt(PARAMS.BASE.BALL_COUNT * viewport.width * viewport.height * 0.000001);
   }
 
   // ---------------------------------------------- //

@@ -1,4 +1,4 @@
-var PARAMS = {
+window.PARAMS_SQUISH = {
   // -------------------------------------------- //
   //            v   Play with me!!   v            //
   INTER_BALL_COLLISIONS_ON: true,
@@ -8,6 +8,8 @@ var PARAMS = {
   SHINE_ON: false,
   POPPING_ON: false,
   GROWING_ON: false,
+
+  RECURRING_AUTO_TOUCH_PERIOD: 4000,
 
   GRAVITATIONAL_ACCELERATION: 0.00001, // pixels / millis^2
 
@@ -217,20 +219,8 @@ var PARAMS = {
       TIME: 1000
     },
     {
-      POS_RATIO: { X: 0.05, Y: 0.95 },
-      TIME: 1200
-    },
-    {
-      POS_RATIO: { X: 0.8, Y: 0.2 },
-      TIME: 1600
-    },
-    {
       POS_RATIO: { X: 0.2, Y: 0.8 },
       TIME: 2400
-    },
-    {
-      POS_RATIO: { X: 0.5, Y: 0.5 },
-      TIME: 4000
     }
   ]
   // -------------------------------------------- //

@@ -1,13 +1,15 @@
-var PARAMS = {
+window.PARAMS_BUBBLE = {
   // -------------------------------------------- //
   //            v   Play with me!!   v            //
   INTER_BALL_COLLISIONS_ON: true,
-  SQUISH_ON: false,
-  INDEPENDENT_CHILD_MOVEMENT_ON: true,
+  SQUISH_ON: true,
+  INDEPENDENT_CHILD_MOVEMENT_ON: false,
   PARENT_CHILD_MOMENTUM_TRANSFER_ON: false,
   SHINE_ON: true,
   POPPING_ON: true,
   GROWING_ON: true,
+
+  RECURRING_AUTO_TOUCH_PERIOD: 10000,
 
   GRAVITATIONAL_ACCELERATION: 0.0, // pixels / millis^2
 
@@ -24,8 +26,8 @@ var PARAMS = {
   INTRA_BALL_COLLISION_SQUISH_STRENGTH_COEFF: 0.9,
 
   BASE: {
-    BALL_COUNT: 5,
-    RECURSIVE_DEPTH: 1,
+    BALL_COUNT: 4,
+    RECURSIVE_DEPTH: 0,
 
     MIN_RADIUS: 40, // pixels
     MAX_RADIUS: 100,
@@ -96,14 +98,14 @@ var PARAMS = {
     MIN_LIGHTNESS: 0, // percentage
     MAX_LIGHTNESS: 100,
 
-    OPACITY: 0.15,
+    OPACITY: 0.001,
 
     BACKGROUND_IMAGE: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADVSURBVHic7duxDYAwAANBiNgDsf+OgQ1oviBIdxNY33s/z+veFjbG+HrCq7XX/YCAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYDRsfoPY8759YRXa9f7AQEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjAaMHQNgFBphZsIkAAAAASUVORK5CYII=)'
   },
   SHINE: {
     EASING_FUNCTION: 'easeInOutQuad',
     IRIDESCENCE: {
-      COUNT: 5,
+      COUNT: 6,
 
       GRADIENT_MOVES: true,
       GRADIENT_SIZE_CHANGES: true,
@@ -217,20 +219,8 @@ var PARAMS = {
       TIME: 1000
     },
     {
-      POS_RATIO: { X: 0.05, Y: 0.95 },
-      TIME: 1200
-    },
-    {
-      POS_RATIO: { X: 0.8, Y: 0.2 },
-      TIME: 1600
-    },
-    {
       POS_RATIO: { X: 0.2, Y: 0.8 },
       TIME: 2400
-    },
-    {
-      POS_RATIO: { X: 0.5, Y: 0.5 },
-      TIME: 4000
     }
   ]
   // -------------------------------------------- //

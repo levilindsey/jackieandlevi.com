@@ -22,9 +22,9 @@
     "email": "levisl176@gmail.com",
     "url": "http://jackieandlevi.com/levi"
   },
-  "main": "src/main",
+  "main": "src/server/main",
   "scripts": {
-    "start": "node src/main.js",
+    "start": "node src/server/main.js",
     "test": "./node_modules/.bin/mocha",
     "postinstall": "bower install"
   },
@@ -74,7 +74,8 @@
     "karma-chrome-launcher": "^0.1.4",
     "protractor": "~1.0.0-rc6",
     "jitsu": "~0.13.18",
-    "gulp-nodemon": "^1.0.4"
+    "gulp-nodemon": "^1.0.4",
+    "gulp-plumber": "^0.6.4"
   },
   "engines": {
     "node": ">=0.10"

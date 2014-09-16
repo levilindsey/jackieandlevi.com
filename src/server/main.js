@@ -1,14 +1,32 @@
 /**
- * @module server
+ * @module app
  *
- * Exposes the createServer function, which creates the server instance, sets up the middleware,
- * and attaches the route handlers.
+ * This script instantiates the server and begins listening for requests.
  */
+
+var config = require('./config/config');
+
+init().then(function (server) {
+  if (config.environment === 'development') {
+    // Specifying an address of '0.0.0.0' allows us to access the server from any computer on the
+    // local network
+    server.listen(config.app.port, '0.0.0.0', function () {
+      console.log('Express server listening over the local network on port ' + config.app.port);
+    });
+  } else {
+    server.listen(config.app.port, function () {
+      console.log('Express server listening on port ' + config.app.port);
+    });
+  }
+}).catch(function (error) {
+  console.error('Unable to start server: ' + error);
+  process.exit(1);
+});
 
 /**
  * Sets up the server.
  */
-exports.init = function () {
+function init() {
   var deferred = require('q').defer(),
       server = require('express')(),
       db = require('./database/db'),
@@ -37,4 +55,4 @@ exports.init = function () {
   }
 
   return deferred.promise;
-};
+}

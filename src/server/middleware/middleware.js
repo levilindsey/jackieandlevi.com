@@ -56,4 +56,10 @@ function attachExpressMiddleware(server) {
 //      collection: 'sessions'
 //    })
 //  }));
+  server.use(handleError);
+}
+
+function handleError(error, req, res, next) {
+  console.error(error);
+  res.status(500).send(error);
 }

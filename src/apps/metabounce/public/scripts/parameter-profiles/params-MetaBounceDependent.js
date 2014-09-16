@@ -1,4 +1,4 @@
-var PARAMS = {
+window.PARAMS_DEPENDENT = {
   // -------------------------------------------- //
   //            v   Play with me!!   v            //
   INTER_BALL_COLLISIONS_ON: true,
@@ -9,13 +9,15 @@ var PARAMS = {
   POPPING_ON: false,
   GROWING_ON: false,
 
-  GRAVITATIONAL_ACCELERATION: 0.00001, // pixels / millis^2
+  RECURRING_AUTO_TOUCH_PERIOD: 10000,
+
+  GRAVITATIONAL_ACCELERATION: 0.0, // pixels / millis^2
 
   MIN_DENSITY: 4.75,
   MAX_DENSITY: 5.25,
 
-  COEFF_OF_RESTITUTION: 0.82, // 0 = perfectly INELASTIC collision, 1 = perfectly ELASTIC collision
-  COEFF_OF_FRICTION: 0.00001,
+  COEFF_OF_RESTITUTION: 1.0, // 0 = perfectly INELASTIC collision, 1 = perfectly ELASTIC collision
+  COEFF_OF_FRICTION: 0.0,
 
   MIN_SQUISHINESS: 0, // how much the ball compresses on impact (from 0 to 1)
   MAX_SQUISHINESS: 0.7,
@@ -24,11 +26,11 @@ var PARAMS = {
   INTRA_BALL_COLLISION_SQUISH_STRENGTH_COEFF: 0.9,
 
   BASE: {
-    BALL_COUNT: 45,
-    RECURSIVE_DEPTH: 0,
+    BALL_COUNT: 7,
+    RECURSIVE_DEPTH: 1,
 
-    MIN_RADIUS: 5, // pixels
-    MAX_RADIUS: 26,
+    MIN_RADIUS: 40, // pixels
+    MAX_RADIUS: 100,
 
     MIN_VELOCITY: -0.46, // pixels/millis
     MAX_VELOCITY: 0.46,
@@ -37,14 +39,14 @@ var PARAMS = {
     MAX_RADIUS_GROWTH_RATE: 0.003 // pixels/millis
   },
   CHILD: {
-    MIN_BALL_COUNT: 1,
+    MIN_BALL_COUNT: 2,
     MAX_BALL_COUNT: 5,
 
     MIN_SIZE_RATIO: 0.06,
     MAX_SIZE_RATIO: 0.3,
 
-    MIN_VELOCITY_RATIO: 0.1,
-    MAX_VELOCITY_RATIO: 0.5,
+    MIN_VELOCITY_RATIO: 0.8,
+    MAX_VELOCITY_RATIO: 1.3,
 
     RADIUS_GROWTH_RATIO: 0.9
   },
@@ -217,20 +219,8 @@ var PARAMS = {
       TIME: 1000
     },
     {
-      POS_RATIO: { X: 0.05, Y: 0.95 },
-      TIME: 1200
-    },
-    {
-      POS_RATIO: { X: 0.8, Y: 0.2 },
-      TIME: 1600
-    },
-    {
       POS_RATIO: { X: 0.2, Y: 0.8 },
       TIME: 2400
-    },
-    {
-      POS_RATIO: { X: 0.5, Y: 0.5 },
-      TIME: 4000
     }
   ]
   // -------------------------------------------- //
