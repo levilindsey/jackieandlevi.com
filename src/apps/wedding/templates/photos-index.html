@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% var baseDir = '/wedding'; %>
+  <% var cacheBuster = '.v2.3.2'; %>
+
+  <head>
+    <title>Wedding Photos</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Photos from Jackie and Levi Lindsey's wedding.">
+    <link rel="shortcut icon" href="<%= baseDir %>/res/images/favicon<%= cacheBuster %>.ico">
+    <link rel="stylesheet" href="<%= baseDir %>/src/styles/photolightbox<%= cacheBuster %>.css">
+    <link rel="stylesheet" href="<%= baseDir %>/src/styles/dropdownphotogrid<%= cacheBuster %>.css">
+  </head>
+  <body>
+    <div id="noJavaScriptMsg" class="errorMessage">
+      :( Sorry, but this fancy web app requires JavaScript.
+    </div>
+
+    <script>
+      // Remove the no-JavaScript message
+      var body, noJavaScriptMessage;
+      body = document.getElementsByTagName('body')[0];
+      noJavaScriptMessage = document.getElementById('noJavaScriptMsg');
+      body.removeChild(noJavaScriptMessage);
+    </script>
+
+    <script src="<%= baseDir %>/src/scripts/params<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/util<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/log<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/animate<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/progressCircle<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/photoItem<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/photoGroup<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/photoMetadata<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/photoLightbox<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/photoGridCell<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/dropdownPhotoGrid<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/photoGridCollection<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/index<%= cacheBuster %>.js"></script>
+
+    <script src="<%= analyticsScriptPath %>"></script>
+  </body>
+</html>

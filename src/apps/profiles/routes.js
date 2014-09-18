@@ -8,7 +8,7 @@ var TEMPLATE_DIR = '/templates';
 var templatePath = null;
 
 // Attaches the route handlers for this app.
-exports.attachHandlers = function (server, appPath) {
+exports.attachRoutes = function (server, appPath) {
   templatePath = appPath + TEMPLATE_DIR;
 
   server.get(JACKIE_ROUTE_REGEX, function(req, res, next) {

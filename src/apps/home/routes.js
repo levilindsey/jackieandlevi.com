@@ -1,20 +1,18 @@
-// This module is important for connecting this app to the server. It exports
-// a function, which attaches all of the necessary route handlers for this app.
+/**
+ * The home route will only match a URL with no path value.
+ */
 
-var ROUTE_REGEX = '/';
-var TEMPLATE_FILE = '/templates/index';
-
-var templatePath = null;
+var routeRegex = '/';
+var indexFilePath = '/index.html';
 
 // Attaches the route handlers for this app.
-exports.attachHandlers = function (server, appPath) {
-  templatePath = appPath + TEMPLATE_FILE;
+exports.attachRoutes = function (server, appPath) {
+  indexFilePath = appPath + indexFilePath;
 
-  server.get(ROUTE_REGEX, handleRequest);
+  server.get(routeRegex, handleRequest);
 };
 
 // Handles a request for this app.
 function handleRequest(req, res, next) {
-  var content = {};
-  res.render(templatePath, content);
+  res.sendfile(indexFilePath);
 }

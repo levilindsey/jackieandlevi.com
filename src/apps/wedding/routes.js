@@ -9,9 +9,9 @@ var inviteTemplatePath = null;
 var photoViewerTemplatePath = null;
 
 // Attaches the route handlers for this app.
-exports.attachHandlers = function (server, appPath) {
-  inviteTemplatePath = appPath + TEMPLATE_DIR + '/inviteIndex';
-  photoViewerTemplatePath = appPath + TEMPLATE_DIR + '/photosIndex';
+exports.attachRoutes = function (server, appPath) {
+  inviteTemplatePath = appPath + TEMPLATE_DIR + '/invite-index';
+  photoViewerTemplatePath = appPath + TEMPLATE_DIR + '/photos-index';
 
   server.get(PHOTO_VIEWER_ROUTE_REGEX, handlePhotoViewerRequest);
   server.get(INVITE_ROUTE_REGEX, handleInviteRequest);
@@ -19,14 +19,11 @@ exports.attachHandlers = function (server, appPath) {
 
 // Handles a request for the photo-viewer app.
 function handlePhotoViewerRequest(req, res, next) {
-  var content, dirs;
-
-  dirs = req.path.split('/');
+  var dirs = req.path.split('/');
 
   if (dirs[3] === '' && dirs.length === 4 ||
       dirs.length === 3) {
-    content = {};
-    res.render(photoViewerTemplatePath, content);
+    res.sendfile(photoViewerTemplatePath);
   } else {
     next();
   }

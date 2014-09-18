@@ -32,7 +32,7 @@ function setUpStaticFiles(server) {
   // Set up static files for Bower
   mountPath = '/bower_components';
   staticPath = config.app.bowerComponentsPath;
-  server.use(mountPath, serveStatic(staticPath));
+  server.use(mountPath, serveStatic(staticPath, {maxAge: config.app.cacheMaxAge}));
   console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
 }
 
@@ -48,6 +48,6 @@ function setUpStaticFilesForApp(appName, server, serveStatic) {
 
   mountPath = '/' + appName;
   staticPath = config.app.appsPath + '/' + appName + '/public';
-  server.use(mountPath, serveStatic(staticPath));
+  server.use(mountPath, serveStatic(staticPath, {maxAge: config.app.cacheMaxAge}));
   console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
 }

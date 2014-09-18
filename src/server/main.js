@@ -37,7 +37,7 @@ function init() {
   // TODO: add database support on NodeJitsu
 //  db.init();
   middleware.init(server);
-  routes.init(server);
+  routes.attachRoutes(server);
 
   // Clean up some system state for development and testing
   if (config.environment === 'development') {

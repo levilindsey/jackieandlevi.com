@@ -4,7 +4,7 @@
 var ROUTE_REGEX = /^\/fat-cat-chat(?:\/.*)?$/;
 
 // Attaches the route handlers for this app.
-exports.attachHandlers = function (server, appPath) {
+exports.attachRoutes = function (server, appPath) {
   server.get(ROUTE_REGEX, handleRequest);
 };
 

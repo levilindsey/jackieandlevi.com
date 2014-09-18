@@ -7,7 +7,7 @@ var TEMPLATE_FILE = '/templates/index';
 var templatePath = null;
 
 // Attaches the route handlers for this app.
-exports.attachHandlers = function (server, appPath) {
+exports.attachRoutes = function (server, appPath) {
   templatePath = appPath + TEMPLATE_FILE;
 
   server.all(ROUTE_REGEX, handleRequest);
@@ -17,7 +17,7 @@ exports.attachHandlers = function (server, appPath) {
 function handleRequest(req, res, next) {
   var content = {
     status: 404,
-    pageName: req.host + req.path
+    pageName: req.hostname + req.path
   };
   res.status(404).render(templatePath, content);
 }

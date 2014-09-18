@@ -47,7 +47,6 @@ selenium/
 
 lib-cov
 *.seed
-*.csv
 *.dat
 *.out
 *.pid
@@ -55,9 +54,10 @@ lib-cov
 pids
 logs
 results
-npm-debug.log
 
 *.pem
 
 aws_config.json
 secure-config.js
+
+dist/

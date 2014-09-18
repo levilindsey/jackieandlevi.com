@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% var baseDir = '/progress-circle'; %>
+  <% var cacheBuster = '.v1.0.2'; %>
+
+  <head>
+    <title>Progress Circle</title>
+    <meta charset="utf-8">
+    <meta name="description" content="A progress circle!">
+    <link rel="stylesheet" href="<%= baseDir %>/src/styles/index<%= cacheBuster %>.css">
+    <link rel="shortcut icon" href="<%= baseDir %>/res/images/favicon<%= cacheBuster %>.ico">
+  </head>
+  
+  <body>
+    <script src="<%= baseDir %>/src/scripts/params<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/util<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/log<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/animate<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/progressCircle<%= cacheBuster %>.js"></script>
+    <script src="<%= baseDir %>/src/scripts/index<%= cacheBuster %>.js"></script>
+
+    <script src="<%= analyticsScriptPath %>"></script>
+  </body>
+</html>

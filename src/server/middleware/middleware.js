@@ -16,6 +16,7 @@ exports.init = function (server) {
   var staticFiles = require('./static-files');
 
   attachExpressMiddleware(server);
+  attachCacheBusterRemover(server);
   staticFiles.init(server);
 };
 
@@ -57,6 +58,22 @@ function attachExpressMiddleware(server) {
 //    })
 //  }));
   server.use(handleError);
+}
+
+/**
+ * The static files used in this project are re-named within the Lo-Dash templates to enable cache
+ * busting. A token is injected just before each URL's filename extension.
+ *
+ * This function attaches middleware to remove this token, so the server can recognize the
+ * original filename.
+ *
+ * @param {Object} server
+ */
+function attachCacheBusterRemover(server) {
+  server.use(function (req, res, next) {
+    req.url = req.url.replace(/\/([^\/]+)\.v?[\d.\-]+\.(css|js|json|jpg|png|gif|svg|ico|m4a|ogg)$/i, '/$1.$2');
+    next();
+  });
 }
 
 function handleError(error, req, res, next) {

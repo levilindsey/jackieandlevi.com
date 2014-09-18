@@ -9,8 +9,8 @@
  *
  * @param {Object} server
  */
-exports.init = function (server) {
+exports.attachRoutes = function (server) {
   var viewRoutes = require('./view-routes');
 
-  viewRoutes.init(server);
+  viewRoutes.attachRoutes(server);
 };

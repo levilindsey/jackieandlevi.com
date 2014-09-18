@@ -9,11 +9,11 @@
     }
   ],
   "dependencies": {
-    "angular": "~1.2.20",
-    "angular-mocks": "~1.2.20",
-    "angular-ui-router": "~0.2.10",
-    "angular-resource": "~1.2.20",
-    "angular-animate": "~1.2.20"
+    "angular": "~1.2.25",
+    "angular-mocks": "~1.2.25",
+    "angular-ui-router": "~0.2.11",
+    "angular-resource": "~1.2.25",
+    "angular-animate": "~1.2.25"
   },
   "devDependencies": {},
   "ignore": [
