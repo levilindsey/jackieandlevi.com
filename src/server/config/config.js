@@ -1,9 +1,3 @@
-/**
- * @module config
- *
- * Holds server-side configuration data for the app.
- */
-
 var fs = require('fs'),
     secureConfig = require('./secure-config'),
     path = require('path'),
@@ -20,7 +14,7 @@ config.app = secureConfig.app;
 config.app.port = 3000;
 config.app.url = 'http://localhost:' + config.app.port;
 
-// The locations of some important files
+// Locations of some important files
 config.app.projectRootPath = path.resolve(__dirname + '/../../..');
 config.app.srcPath = config.app.projectRootPath + '/src';
 config.app.appsPath = config.app.srcPath + '/apps';
@@ -33,7 +27,7 @@ config.app.cacheMaxAge = 2592000000;
 
 config.app.apps = fs.readdirSync(config.app.appsPath);
 
-// Set some mode-specific parameters
+// Mode-specific parameters
 switch (config.environment) {
   case 'development':
     config.app.port = 3001;

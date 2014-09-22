@@ -1,25 +1,13 @@
-/**
- * @module db
- *
- * Serves as the interface to the database for the rest of the server logic.
- */
-
 var Q = require('q'),
     mongoose = require('mongoose'),
     config = require('../config/config');
 
 // --- Database connection --- //
 
-/**
- * Initializes the database.
- */
 exports.init = function () {
   connectToDatabase();
 };
 
-/**
- * Connects to the Mongo database.
- */
 function connectToDatabase() {
   mongoose.connect(config.db.url);
 
@@ -29,18 +17,10 @@ function connectToDatabase() {
   });
 }
 
-/**
- * Retrieves the connection to the Mongo database.
- *
- * @returns {Object}
- */
 exports.getDatabaseConnection = function () {
   return mongoose.connection;
 };
 
-/**
- * Empties all collections in the database.
- */
 exports.clear = function () {
   var deferred = Q.defer();
 

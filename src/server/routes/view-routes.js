@@ -1,17 +1,6 @@
-/**
- * @module view-routes
- *
- * Handles all HTTP requests that are intended for view retrieval.
- */
-
 var fs = require('fs'),
     config = require('../config/config');
 
-/**
- * Attaches the route handlers to the server.
- *
- * @param {Object} server
- */
 exports.attachRoutes = function (server) {
   console.log('Attaching view-route handlers');
 
@@ -25,12 +14,6 @@ exports.attachRoutes = function (server) {
   attachRoutesForApp(server, config.app.pageMissingPath);
 };
 
-/**
- * Uses a module in the given appName directory to attach the route handlers for that app.
- *
- * @param {Object} server
- * @param {string} appPath
- */
 function attachRoutesForApp(server, appPath) {
   try {
     require(appPath + '/routes').attachRoutes(server, appPath);

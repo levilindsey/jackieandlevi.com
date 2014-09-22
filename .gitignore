@@ -1,14 +1,9 @@
-# Compiled source #
-###################
 *.com
 *.class
 *.dll
 *.exe
 *.o
 *.so
-
-# Packages #
-############
 *.7z
 *.dmg
 *.gz
@@ -18,15 +13,9 @@
 *.tar
 *.zip
 *.tgz
-
-# Logs and databases #
-######################
 *.log
 *.sql
 *.sqlite
-
-# OS generated files #
-######################
 .DS_Store
 .DS_Store?
 ._*
@@ -35,29 +24,10 @@
 ehthumbs.db
 Thumbs.db
 
-# node dependencies #
-#####################
 node_modules/
-
 bower_components/
-
 selenium/
-
 .idea/
-
-lib-cov
-*.seed
-*.dat
-*.out
-*.pid
-
-pids
-logs
-results
-
-*.pem
-
 aws_config.json
 secure-config.js
-
 dist/

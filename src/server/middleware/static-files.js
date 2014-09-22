@@ -1,25 +1,9 @@
-/**
- * @module static-files
- *
- * Handles the serving of static files.
- */
-
 var config = require('../config/config');
 
-/**
- * Sets up static file-serving middleware.
- *
- * @param {Object} server
- */
 exports.init = function (server) {
   setUpStaticFiles(server);
 };
 
-/**
- * Serves static file serving for all applications.
- *
- * @param {Object} server
- */
 function setUpStaticFiles(server) {
   var serveStatic, mountPath, staticPath;
 
@@ -36,13 +20,6 @@ function setUpStaticFiles(server) {
   console.log('Serving static files: staticPath=' + staticPath + ', mountPath=' + mountPath);
 }
 
-/**
- * Sets up static file serving for the given app.
- *
- * @param {string} appName
- * @param {Object} server
- * @param {Object} serveStatic
- */
 function setUpStaticFilesForApp(appName, server, serveStatic) {
   var mountPath, staticPath;
 

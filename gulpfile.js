@@ -2,13 +2,15 @@
 
 var projectName = 'jackieandlevi',
 
-    templatesSrcPath = 'src/apps/**/*.html',
-    scriptsSrcPath = 'src/apps/**/*.js',
-    stylesGlobSrcPath = 'src/apps/**/*.scss',
-    stylesMainSrcPath = 'src/apps/main.scss',
-    imagesSrcPath = 'src/apps/images/**/*',
+    appsSrcPath = appsSrcPath + '',
+
+    templatesSrcPath = appsSrcPath + '/**/*.html',
+    scriptsSrcPath = appsSrcPath + '/**/*.js',
+    stylesGlobSrcPath = appsSrcPath + '/**/*.scss',
+    stylesMainSrcPath = appsSrcPath + '/main.scss',
+    imagesSrcPath = appsSrcPath + '/**/images/**/*',
+    frontEndTestsSrcPath = appsSrcPath + '/**/*_test.js',
     serverTestsSrcPath = 'src/server/tests/**/*_test.js',
-    frontEndTestsSrcPath = 'src/apps/*/public/**/*_test.js',
 
     distPath = 'dist/apps',
     templatesDistPath = distPath,
