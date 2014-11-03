@@ -1,113 +1,68 @@
-// TODO: should this reference separate gulpfiles within each sub-app's directory?
+// TODO: split this apart into separate files for each task within the gulp directory
 
-var projectName = 'jackieandlevi',
+var config = {};
 
-    appsSrcPath = appsSrcPath + '',
+config.appsPath = 'apps';
+config.serverPath = 'server';
 
-    templatesSrcPath = appsSrcPath + '/**/*.html',
-    scriptsSrcPath = appsSrcPath + '/**/*.js',
-    stylesGlobSrcPath = appsSrcPath + '/**/*.scss',
-    stylesMainSrcPath = appsSrcPath + '/main.scss',
-    imagesSrcPath = appsSrcPath + '/**/images/**/*',
-    frontEndTestsSrcPath = appsSrcPath + '/**/*_test.js',
-    serverTestsSrcPath = 'src/server/tests/**/*_test.js',
+config.templatesSrc = config.appsPath + '/*/*index.html';
+config.frontEndTestsSrc = config.appsPath + '/**/*_test.js';
+config.serverTestsSrc = config.serverPath + '/tests/**/*_test.js';
 
-    distPath = 'dist/apps',
-    templatesDistPath = distPath,
-    scriptsDistPath = distPath,
-    stylesDistPath = distPath,
-    imagesDistPath = distPath,
+config.templatesDist = config.appsPath;
 
-    sourcemapPath = '../src/scss',
+config.serverMainPath = './' + config.serverPath + '/main.js';
 
-    serverMainPath = 'src/server/main.js',
+// ---  --- //
 
-    analyticsScriptPath = '/home/scripts/googleanalytics.js',
+config.analyticsScript =
+    "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){" +
+      "(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o)," +
+      "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)" +
+    "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');" +
+    "ga('create', 'UA-43971205-1', 'jackieandlevi.com');" +
+    "ga('send', 'pageview');";
 
-    gulp = require('gulp'),
-    plugins = require('gulp-load-plugins')();
+// ---  --- //
+
+var gulp = require('gulp');
+var plugins = require('gulp-load-plugins')();
 
 gulp.task('templates', function () {
-  return gulp.src(templatesSrcPath)
+  return gulp.src(config.templatesSrc)
       .pipe(plugins.plumber())
-      .pipe(plugins.template({analyticsScriptPath: analyticsScriptPath}))
-      .pipe(gulp.dest(templatesDistPath));
-});
-
-gulp.task('scripts', function () {
-  return gulp.src(scriptsSrcPath)
-      .pipe(plugins.plumber())
-      .pipe(plugins.concat(projectName + '.js'))
-      .pipe(gulp.dest(scriptsDistPath))
-      .pipe(plugins.filesize())
-      .pipe(plugins.rename({suffix: '.min'}))
-      .pipe(plugins.uglify())
-      .pipe(gulp.dest(scriptsDistPath))
-      .pipe(plugins.filesize());
-});
-
-gulp.task('styles', function () {
-  return gulp.src(stylesMainSrcPath)
-      .pipe(plugins.plumber())
-      // TODO: go back to rubySass if it isn't broken anymore...
-      //.pipe(plugins.rubySass({style: 'expanded', sourcemap: true, sourcemapPath: sourcemapPath}))
-      .pipe(plugins.sass({sourceComments: 'map'}))
-      .pipe(plugins.autoprefixer('last 2 version'))
-      .pipe(gulp.dest(stylesDistPath))
-      .pipe(plugins.rename({suffix: '.min'}))
-      .pipe(plugins.minifyCss())
-      .pipe(gulp.dest(stylesDistPath));
-});
-
-gulp.task('images', function () {
-  return gulp.src(imagesSrcPath)
-      .pipe(plugins.plumber())
-      .pipe(plugins.cache(plugins.imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
-      .pipe(gulp.dest(imagesDistPath));
+      .pipe(plugins.template({analyticsScript: config.analyticsScript}))
+      .pipe(plugins.rename(function (path) {
+        path.dirname += '/public';
+      }))
+      .pipe(gulp.dest(config.templatesDist));
 });
 
 gulp.task('tests-once', ['server-tests-once', 'front-end-tests-once']);
 
 gulp.task('server-tests-once', function () {
-  return gulp.src(serverTestsSrcPath, {read: false})
+  return gulp.src(config.serverTestsSrc, {read: false})
+      .pipe(plugins.plumber())
       .pipe(plugins.mocha({reporter: 'dot', ui: 'tdd'}));
 });
 
 gulp.task('front-end-tests-once', function () {
-  return gulp.src(frontEndTestsSrcPath)
+  return gulp.src(config.frontEndTestsSrc)
+      .pipe(plugins.plumber())
       .pipe(plugins.karma({configFile: 'karma.conf.js', action: 'run'}));
-});
-
-gulp.task('front-end-tests-tdd', function () {
-  return gulp.src(frontEndTestsSrcPath)
-      .pipe(plugins.karma({configFile: 'karma.conf.js', action: 'watch'}));
 });
 
 gulp.task('bump', function () {
   return gulp.src(['./bower.json', './package.json'])
-      .pipe(bump({type: 'patch'})) // 'major'|'minor'|'patch'|'prerelease'
+      .pipe(plugins.plumber())
+      .pipe(plugins.bump({type: 'patch'})) // 'major'|'minor'|'patch'|'prerelease'
       .pipe(gulp.dest('./'));
 });
 
-gulp.task('clean', function () {
-  return gulp.src(distPath, {read: false})
-      .pipe(plugins.clean());
-});
-
-gulp.task('default', ['clean'], function () {
-  gulp.start('server', 'templates', 'scripts', 'styles', 'tests-once', 'watch');//, 'images');// TODO: add image compression for future, image-dependent projects
-});
-
-gulp.task('watch', ['front-end-tests-tdd'], function () {
-  gulp.watch(stylesGlobSrcPath, ['styles']);
-
-  gulp.watch(scriptsSrcPath, ['scripts']);
-
-//  gulp.watch(imagesSrcPath, ['images']);// TODO: add image compression for future, image-dependent projects
-
-//  gulp.watch(serverTestsSrcPath, ['server-tests-once']);
-});
-
 gulp.task('server', function () {
-  plugins.nodemon({script: serverMainPath});
+  require(config.serverMainPath);
+});
+
+gulp.task('default', function () {
+  gulp.start('server', 'templates', 'tests-once');
 });

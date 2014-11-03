@@ -1,0 +1,40 @@
+- var currentVersion = '?v=1.0.1';
+- var baseDir = '/profiles';
+
+doctype html
+html(lang='en')
+  head
+    title #{upperName} Lindsey&apos;s webpage
+
+    meta(charset='utf-8')
+    meta(name='description', content='Jackie and Levi Lindsey&apos;s personal website')
+
+    link(rel='shortcut icon', href='#{baseDir}/images/favicon.ico#{currentVersion}')
+    link(rel='stylesheet', href='#{baseDir}/styles/#{lowerName}Profile.css#{currentVersion}')
+  body
+    span#forkMeOnGitHubRibbon
+      a(href='https://github.com/levisl176?tab=repositories', target='_blank')
+        | Fork me on GitHub!
+
+    #contentColumn
+      header#banner
+        #titleCircle
+          img(src='#{baseDir}/images/#{lowerName}_circle.png#{currentVersion}', alt='Circle')
+          h1
+            | #{upperName}<br>Lindsey
+
+        a#ribbon(href='#{ribbonLink}')
+          img(src='#{baseDir}/images/#{lowerName}_ribbon.png#{currentVersion}', alt='#{ribbonAlt}')
+
+        nav#internalLinks
+          - var profilePages = [{link: 'about', name: 'About'}, {link: 'projects', name: 'Projects'}, {link: 'resume', name: 'Resume'}, {link: 'follow', name: 'Follow Me'}, {link: '../', name: 'J & L Home'}];
+          ul
+            each page in profilePages
+              li
+                a(href='/#{lowerName}/#{page.link}')
+                  | #{page.name}
+
+      #mainArea
+        block content
+
+      include footer

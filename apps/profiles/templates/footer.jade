@@ -1,0 +1,12 @@
+footer
+  | Site last updated: 
+  time(datetime='2014-7-12', pubdate)
+    | 3/29/2014
+
+script
+  | #{analyticsScript}
+
+script(src='#{baseDir}/scripts/params.js#{currentVersion}')
+script(src='#{baseDir}/scripts/log.js#{currentVersion}')
+script(src='#{baseDir}/scripts/util.js#{currentVersion}')
+script(src='#{baseDir}/scripts/index.js#{currentVersion}')
