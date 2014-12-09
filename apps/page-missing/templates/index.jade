@@ -1,4 +1,4 @@
-- var currentVersion = '?v=1.0.1';
+- var cacheBuster = '.v1.0.2';
 - var baseDir = '/page-missing';
 
 doctype html
@@ -11,10 +11,12 @@ html(lang='en')
     meta(name='description', content='Jackie and Levi Lindsey\'s personal website')
     meta(name='viewport', content='width=device-width')
 
-    link(rel='shortcut icon', href='#{baseDir}/images/favicon.ico#{currentVersion}')
-    link(rel='stylesheet', href='#{baseDir}/main.css#{currentVersion}')
+    link(rel='icon', type='image/png', href='#{baseDir}/images/favicon-16x16#{cacheBuster}.png', sizes="16x16")
+    link(rel='icon', type='image/png', href='#{baseDir}/images/favicon-32x32#{cacheBuster}.png', sizes="32x32")
+
+    link(rel='stylesheet', href='#{baseDir}/main#{cacheBuster}.css')
   body
-    img(src='#{baseDir}/images/maya.jpg#{currentVersion}', alt='A cat')
+    img(src='#{baseDir}/images/maya#{cacheBuster}.jpg', alt='A cat')
     h1
       | Page Missing
     p

@@ -1,8 +1,9 @@
-// This module is important for connecting this app to the server. It exports
-// a function, which attaches all of the necessary route handlers for this app.
+// This module is important for connecting this app to the server. It exports a function, which attaches all of the
+// necessary route handlers for this app.
 
-var PHOTO_VIEWER_ROUTE_REGEX = /^\/wedding\/photos(?:\/.*)?$/;
-var INVITE_ROUTE_REGEX = /^\/wedding(?:\/.*)?$/;
+var weddingPhotosRouteRegex = /^\/wedding\/photos(?:\/.*)?$/;
+var inviteRouteRegex = /^\/wedding(?:\/.*)?$/;
+var photoViewerRouteRegex = /^\/photo-viewer(?:\/.*)?$/;
 
 var inviteTemplatePath = null;
 var photoViewerTemplatePath = null;
@@ -12,8 +13,9 @@ exports.attachRoutes = function (server, appPath, config) {
   inviteTemplatePath = appPath + '/templates/invite-index';
   photoViewerTemplatePath = appPath + '/public/photos-index.html';
 
-  server.get(PHOTO_VIEWER_ROUTE_REGEX, handlePhotoViewerRequest);
-  server.get(INVITE_ROUTE_REGEX, handleInviteRequest);
+  server.get(weddingPhotosRouteRegex, handlePhotoViewerRequest);
+  server.get(photoViewerRouteRegex, handlePhotoViewerRequest);
+  server.get(inviteRouteRegex, handleInviteRequest);
 
   // ---  --- //
 
