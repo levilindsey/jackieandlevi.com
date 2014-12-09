@@ -1,6 +1,6 @@
 {
   "name": "jackieandlevi",
-  "version": "3.0.1",
+  "version": "3.0.1-1",
   "description": "Personal portfolio and website of Jackie and Levi Lindsey",
   "licenses": [
     {
@@ -24,7 +24,7 @@
   },
   "main": "src/server/main",
   "scripts": {
-    "start": "node src/server/main.js",
+    "start": "node server/main.js",
     "test": "./node_modules/.bin/mocha"
   },
   "dependencies": {
