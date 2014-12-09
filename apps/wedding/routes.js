@@ -21,14 +21,7 @@ exports.attachRoutes = function (server, appPath, config) {
 
   // Handles a request for the photo-viewer app.
   function handlePhotoViewerRequest(req, res, next) {
-    var dirs = req.path.split('/');
-
-    if (dirs[3] === '' && dirs.length === 4 ||
-        dirs.length === 3) {
-      res.sendFile(photoViewerTemplatePath);
-    } else {
-      next();
-    }
+    res.sendFile(photoViewerTemplatePath);
   }
 
   // Handles a request for the invite app.
