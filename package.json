@@ -25,8 +25,7 @@
   "main": "src/server/main",
   "scripts": {
     "start": "node src/server/main.js",
-    "test": "./node_modules/.bin/mocha",
-    "postinstall": "bower install"
+    "test": "./node_modules/.bin/mocha"
   },
   "dependencies": {
     "q": "~1.0.1",
