@@ -22,7 +22,7 @@
     "email": "levisl176@gmail.com",
     "url": "http://jackieandlevi.com/levi"
   },
-  "main": "src/server/main",
+  "main": "server/main",
   "scripts": {
     "start": "node server/main.js",
     "test": "./node_modules/.bin/mocha"
