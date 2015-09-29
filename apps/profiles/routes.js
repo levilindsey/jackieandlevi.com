@@ -14,9 +14,9 @@ exports.attachRoutes = function (server, appPath, config) {
   server.get(JACKIE_ROUTE_REGEX, function(req, res, next) {
     handleRequest(req, res, next, 'jackie');
   });
-  server.get(LEVI_ROUTE_REGEX, function(req, res, next) {
-    handleRequest(req, res, next, 'levi');
-  });
+  //server.get(LEVI_ROUTE_REGEX, function(req, res, next) {
+  //  handleRequest(req, res, next, 'levi');
+  //});
 
   // ---  --- //
 
