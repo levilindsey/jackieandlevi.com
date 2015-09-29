@@ -5,15 +5,10 @@ var fs = require('fs'),
     config = {};
 
 // TODO: change this to use Node.js environment variables
-config.environment = 'development';
-
-config.db = {};
+config.environment = 'production';
 
 // Merge in the secure configuration data
 config.app = secureConfig.app;
-
-config.app.port = 3000;
-config.app.url = 'http://localhost:' + config.app.port;
 
 // Locations of some important files
 config.app.projectRootPath = path.resolve(__dirname + '/../..');
@@ -40,25 +35,14 @@ switch (config.environment) {
   case 'development':
     config.app.port = 3001;
     config.app.url = 'http://localhost:' + config.app.port;
-
-    config.db.port = '27017';
-    config.db.url = 'mongodb://localhost/jackieandlevi';
     break;
   case 'staging':
     config.app.port = process.env.PORT || 3001;
     config.app.url = 'http://jackieandlevi.com:' + config.app.port;
-
-    // TODO: set up the actual db params
-    config.db.port = '27017';
-    config.db.url = 'mongodb://localhost/jackieandlevi';
     break;
   case 'production':
     config.app.port = process.env.PORT || 3001;
     config.app.url = 'http://jackieandlevi.com:' + config.app.port;
-
-    // TODO: set up the actual db params
-    config.db.port = '27017';
-    config.db.url = 'mongodb://localhost/jackieandlevi';
     break;
   default:
     throw new Error('Invalid mode: ' + config.environment);
