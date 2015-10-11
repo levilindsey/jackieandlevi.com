@@ -5,7 +5,7 @@
 
 #### Personal portfolio and website of Jackie and Levi Lindsey
 
-_See this running at [jackieandlevi.com](http://www.jackieandlevi.com)!_
+_See this running at [jackieandlevi.com](http://jackieandlevi.com)!_
 
 - [Getting Set Up](./docs/getting-set-up.md)
 - [Understanding the Code](./docs/understanding-the-code.md)
@@ -41,7 +41,7 @@ MIT
 [codeship-url]: https://www.codeship.io/projects/12381
 
 [flattr-image]: http://api.flattr.com/button/flattr-badge-large.png
-[flattr-url]: https://flattr.com/submit/auto?user_id=levisl176&url=github.com/levisl176/jackieandlevi.com&title=jackieandlevi.com&language=javascript&tags=github&category=software
+[flattr-url]: https://flattr.com/submit/auto?user_id=levisl176&url=github.com/levilindsey/jackieandlevi.com&title=jackieandlevi.com&language=javascript&tags=github&category=software
 
 [gulp-url]: http://gulpjs.com/
 [node-url]: http://nodejs.org/
