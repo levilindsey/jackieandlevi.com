@@ -1,9 +1,7 @@
 @font-face {
   font-family: 'SassoonSansStd';
-  src: url("/profiles/fonts/SassoonSansStd.eot");
-/* For IE */
-  src: local('SassoonSansStd'), url("/profiles/fonts/SassoonSansStd.ttf") format('truetype'), url("/profiles/fonts/SassoonSansStd.svg") format('svg');
-/* For all other web browsers */
+  src: url("/profiles/fonts/SassoonSansStd.eot"); /* For IE */
+  src: local('SassoonSansStd'), url("/profiles/fonts/SassoonSansStd.ttf") format('truetype'), url("/profiles/fonts/SassoonSansStd.svg") format('svg'); /* For all other web browsers */
   font-weight: normal;
   font-style: normal;
 }
@@ -15,8 +13,7 @@ body div a:active {
   text-decoration: none;
 }
 a:link {
-  color: #aaa;
-/*#be56ea*/
+  color: #aaa; /*#be56ea*/
   text-decoration: none;
 }
 body a:hover {
