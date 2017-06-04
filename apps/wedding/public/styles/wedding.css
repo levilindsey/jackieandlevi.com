@@ -19,16 +19,14 @@ a:visited {
 }
 @font-face {
   font-family: 'Monotype Corsiva';
-  src: url("/wedding/fonts/MTCORSVA.TTF");
-/* For IE */
+  src: url("/wedding/fonts/MTCORSVA.TTF"); /* For IE */
   src: local('Monotype Corsiva'), url("/wedding/fonts/MTCORSVA.TTF") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Edwardian Script ITC';
-  src: url("/wedding/fonts/ITCEdscr.TTF");
-/* For IE */
+  src: url("/wedding/fonts/ITCEdscr.TTF"); /* For IE */
   src: local('Edwardian Script ITC'), url("/wedding/fonts/ITCEdscr.TTF") format('truetype');
   font-weight: bold;
   font-style: normal;
