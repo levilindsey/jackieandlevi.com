@@ -65,7 +65,7 @@
     "jitsu": "~0.14.0"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">=6.11.1"
   },
   "domains": [
     "jackieandlevi.com",
